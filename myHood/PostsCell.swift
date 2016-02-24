@@ -16,8 +16,11 @@ class PostsCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
+        
+        postImage.layer.cornerRadius = postImage.frame.size.width / 2
+        postImage.clipsToBounds = true 
+        
+}
     
     func configureCell(post: Post) {
         titleLabel.text = post.title

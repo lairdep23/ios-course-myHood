@@ -14,6 +14,7 @@
 		20D8F14B1C7E0A0C0087F761 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20D8F1491C7E0A0C0087F761 /* LaunchScreen.storyboard */; };
 		20D8F1541C7E0A770087F761 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D8F1531C7E0A770087F761 /* Post.swift */; };
 		20D8F1571C7E119F0087F761 /* PostsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D8F1561C7E119F0087F761 /* PostsCell.swift */; };
+		20D8F15A1C7E5E930087F761 /* AddPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D8F1591C7E5E930087F761 /* AddPostVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		20D8F14C1C7E0A0C0087F761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20D8F1531C7E0A770087F761 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		20D8F1561C7E119F0087F761 /* PostsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsCell.swift; sourceTree = "<group>"; };
+		20D8F1591C7E5E930087F761 /* AddPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +62,9 @@
 			children = (
 				20D8F1521C7E0A640087F761 /* Model */,
 				20D8F1551C7E11640087F761 /* View */,
+				20D8F1581C7E5E4B0087F761 /* Controller */,
 				20D8F1401C7E0A0C0087F761 /* AppDelegate.swift */,
-				20D8F1421C7E0A0C0087F761 /* ViewController.swift */,
-				20D8F1441C7E0A0C0087F761 /* Main.storyboard */,
 				20D8F1471C7E0A0C0087F761 /* Assets.xcassets */,
-				20D8F1491C7E0A0C0087F761 /* LaunchScreen.storyboard */,
 				20D8F14C1C7E0A0C0087F761 /* Info.plist */,
 			);
 			path = myHood;
@@ -81,9 +81,20 @@
 		20D8F1551C7E11640087F761 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				20D8F1441C7E0A0C0087F761 /* Main.storyboard */,
+				20D8F1491C7E0A0C0087F761 /* LaunchScreen.storyboard */,
 				20D8F1561C7E119F0087F761 /* PostsCell.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		20D8F1581C7E5E4B0087F761 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				20D8F1421C7E0A0C0087F761 /* ViewController.swift */,
+				20D8F1591C7E5E930087F761 /* AddPostVC.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +171,7 @@
 			files = (
 				20D8F1541C7E0A770087F761 /* Post.swift in Sources */,
 				20D8F1431C7E0A0C0087F761 /* ViewController.swift in Sources */,
+				20D8F15A1C7E5E930087F761 /* AddPostVC.swift in Sources */,
 				20D8F1411C7E0A0C0087F761 /* AppDelegate.swift in Sources */,
 				20D8F1571C7E119F0087F761 /* PostsCell.swift in Sources */,
 			);
@@ -311,6 +323,7 @@
 				20D8F1511C7E0A0C0087F761 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
