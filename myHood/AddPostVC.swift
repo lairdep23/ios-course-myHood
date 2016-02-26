@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var postImage: UIImageView!
     
@@ -26,9 +26,40 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         postImage.clipsToBounds = true
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
+        
+        self.titleField.delegate = self
+        self.descriptionField.delegate = self
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
     }
-
-    @IBAction func makePostButtonPressed(sender: UIButton!) {
+    
+    //Keyboard Functions
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            self.view.frame.origin.y -= keyboardSize.height
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            self.view.frame.origin.y += keyboardSize.height
+    }
+    }
+    
+    
+    //Doing stuff functions
+    
+    
+    @IBAction func makePostButtonPressed(sender:AnyObject) {
         
         if let title = titleField.text, let desc = descriptionField.text, let img = postImage.image {
             
